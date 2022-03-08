@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAL.CIO</title>
+    <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyDvgcVTPzUcmpJlVeE6BjyMTPfj1mTg3uwg&usqp=CAU">
+    <style>
+        body{
+            background-image: url(https://images.wallpapersden.com/image/download/macos-12-monterey-stock-light_bGxsaGmUmZqaraWkpJRmbmdlrWZlbWU.jpg);
+        }
+        button{
+            border: 1px solid ;
+            padding: 10px 15px;
+            background-color: black;
+            display: inline-block;
+            font-size: 25px;
+            font-family: Lucida;
+            color: white;
+            border-radius: 30px;
+            border-color: red;
+            overflow: hidden;
+        }
+        button:hover{
+            background: red;
+            color: black;
+            cursor: pointer;
+            box-shadow: 0 0 50px red;
+        }
+        button{
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate{
+            0% {
+                filter:hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+        table{
+            border: 1px;
+            border-spacing: 0mm;
+            padding:0mm;
+            margin: 10px auto;
+            background-color: black;
+            border-radius: 15px;
+            box-shadow: 0 0 30px red;
+        }
+        table,tr,td{
+            width: 400px;
+            height: 70px;
+            font-size: 30px;
+            text-align: center;
+            font-family: lucida;
+        }
+        table{
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate{
+            0% {
+                filter:hue-rotate(0deg);
+            }
+            100%{
+                filter: hue-rotate(360deg);
+            }
+        }
+        input[type=text], select, textarea {
+            font-size: 25px;    
+            font-family: verdana;
+            width: 75%;
+            height: 50%;    
+            padding: 8px;       
+            border-radius: 5px;    
+            text-align:center;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body><br><br><br><br>
+    <table>
+        <tr>
+            <td colspan="4" style="font-size: 25px;color: white;font-family: lucida;"><i>darisi priyatham-iiitk</i></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text" name="boxvalue" id="boxvalue"/></td>
+        </tr>
+        <tr>
+            <td><button value="c" onclick="clr()">AC</button></td>
+            <td><button value="%" onclick="prc()">%</button></td>
+            <td><button value="^2" onclick="sqr()">^2</button></td>
+            <td><button value="^2" onclick="back()" style="font-size: 15px;">backspace</button></td>           
+        </tr>
+        <tr>
+            <td><button value="+" onclick="calc(value)">+</button> </td>
+            <td><button value="1" onclick="calc(value)">1</button> </td>
+            <td><button value="2" onclick="calc(value)">2</button> </td>
+            <td><button value="3" onclick="calc(value)">3</button> </td>
+        </tr>
+        <tr>
+            <td><button value="-" onclick="calc(value)">-</button> </td>
+            <td><button value="4" onclick="calc(value)">4</button> </td>
+            <td><button value="5" onclick="calc(value)">5</button> </td>
+            <td><button value="6" onclick="calc(value)">6</button> </td>
+        </tr>
+        <tr>
+            <td><button value="*" onclick="calc(value)">x</button> </td>
+            <td><button value="7" onclick="calc(value)">7</button> </td>
+            <td><button value="8" onclick="calc(value)">8</button> </td>
+            <td><button value="9" onclick="calc(value)">9</button> </td>
+        </tr>
+        <tr>
+            <td><button value="/" onclick="calc(value)">/</button> </td>
+            <td><button value="." onclick="calc(value)">.</button> </td>
+            <td><button value="0" onclick="calc(value)">0</button> </td>
+            <td><button value="=" onclick="dores()">ANS</button> </td>
+        </tr>
+    </table>
+    <script>
+        function calc(val){
+            document.getElementById("boxvalue").value+=val
+        }
+        function dores(){
+            let x = document.getElementById("boxvalue").value
+            let y = eval(x)
+            document.getElementById("boxvalue").value = y
+        }
+        function clr(){
+            document.getElementById("boxvalue").value = ""
+        }
+        function prc(){
+            let a = document.getElementById("boxvalue").value
+            let b = a / 100
+            document.getElementById("boxvalue").value = b
+        }
+        function sqr(){
+            let c = document.getElementById("boxvalue").value
+            let d = c*c
+            document.getElementById("boxvalue").value = d
+        }
+        function back() {
+            var value = document.getElementById("boxvalue").value;
+            document.getElementById("boxvalue").value = value.substr(0, value.length - 1);
+        }
+    </script>
+</body>
+</html>
